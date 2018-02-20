@@ -34,10 +34,11 @@ val prediction = model.predict(test.map(_.features))
 for (i <- prediction) {
   print(i)
   if (i == 1) println("   Personal Life Event in this tweet is : WEDDING") 
-  else if (i == 2 ) println (",   Personal Life Event in this tweet is: GRADUATE")
-  else if (i == 3 ) println (",   Personal Life Event in this tweet is : NEW JOB") 
-  else if (i == 4 ) println (",   Personal Life Event in this tweet is : BIRTH IN FAMILIE") 
-  else if (i == 0 ) println (",   Personal Life Event in this tweet is : OTHER")}
+  else if (i == 2) println (",   Personal Life Event in this tweet is: GRADUATE")
+  else if (i == 3) println (",   Personal Life Event in this tweet is : NEW JOB") 
+  else if (i == 4) println (",   Personal Life Event in this tweet is : BIRTH IN FAMILIE") 
+  else if (i == 0) println (",   Personal Life Event in this tweet is : OTHER")
+}
 
 val predictionAndLabel = prediction.zip(test.map(_.label))
 val accuracy = 1.0 * predictionAndLabel.filter(x => x._1 == x._2).count() / test.count()
@@ -53,8 +54,8 @@ prediction_test.take(10)
 for (i <- prediction_test) {
   print(i)
   if (i == 1) println("   Personal Life Event in this tweet is : WEDDING") 
-  else if (i == 2 ) println (",   Personal Life Event in this tweet is : GRADUATE")
-  else if (i == 3 ) println (",   Personal Life Event in this tweet is : NEW JOB") 
-  else if (i == 4 ) println (",   Personal Life Event in this tweet is : BIRTH IN FAMILIE") 
-  else if (i == 0 ) println (",   Personal Life Event in this tweet is: OTHER")
+  else if (i == 2) println (",   Personal Life Event in this tweet is : GRADUATE")
+  else if (i == 3) println (",   Personal Life Event in this tweet is : NEW JOB") 
+  else if (i == 4) println (",   Personal Life Event in this tweet is : BIRTH IN FAMILIE") 
+  else if (i == 0) println (",   Personal Life Event in this tweet is: OTHER")
 }
